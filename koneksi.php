@@ -1,9 +1,13 @@
-<?php 
-    $host = "localhost";
+<?php
+    $server = "localhost";
     $user = "root";
-    $password = "";
-    $db = "db_akademik";
+    $pass = "";
+    $nama_db = "db_akademik";   
 
-    $koneksi = new mysqli($host, $user, $password, $db); //open connection
+    $db = new mysqli($server, $user, $pass, $nama_db); //open connection
+
+    if (!$db) {
+        die("Gagal terhubung dengan database: " .mysqli_connect_error());
+    }
 
 ?>
